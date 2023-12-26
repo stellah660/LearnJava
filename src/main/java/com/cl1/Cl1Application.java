@@ -29,6 +29,7 @@ public class Cl1Application {
         LocalDateTime timeNow = time.getTimeNow();
         LocalDate localDate = time.getDateToday();
         LocalTime localTime = time.getLocalTime();
+        LocalDate someDate = time.getSomeDate();
 
         //LocalDateTime
         System.out.println(timeNow);
@@ -41,6 +42,7 @@ public class Cl1Application {
         System.out.println(localDate.atStartOfDay());
         System.out.println(localDate.getDayOfMonth());
         System.out.println(localDate.getChronology());
+        System.out.println(someDate);
 
         //LocalTime
         System.out.println(localTime.getMinute());
