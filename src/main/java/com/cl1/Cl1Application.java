@@ -3,7 +3,9 @@ package com.cl1;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @SpringBootApplication
 public class Cl1Application {
@@ -22,13 +24,31 @@ public class Cl1Application {
         String myName = String.join(" ",names);
         System.out.println(myName);
         //working with dates
-        WorkWithDate time = new WorkWithDate();//instantiating the WorkWithDate class
-        LocalDateTime timeNow = time.getTimeNow();//calling the getter method
+        WorkWithDateTime time = new WorkWithDateTime();//instantiating the WorkWithDateTime class
+        //calling the getter method
+        LocalDateTime timeNow = time.getTimeNow();
+        LocalDate localDate = time.getDateToday();
+        LocalTime localTime = time.getLocalTime();
+
+        //LocalDateTime
         System.out.println(timeNow);
         System.out.println(timeNow.getDayOfMonth());
         System.out.println(timeNow.getDayOfWeek());
         System.out.println(timeNow.getDayOfYear());
         System.out.println(timeNow.getHour());
+
+        //LocalDate
+        System.out.println(localDate.atStartOfDay());
+        System.out.println(localDate.getDayOfMonth());
+        System.out.println(localDate.getChronology());
+
+        //LocalTime
+        System.out.println(localTime.getMinute());
+        System.out.println(localTime.getSecond());
+        System.out.println(localTime.getNano());
+        System.out.println(localTime.toSecondOfDay());
+
+
     }
 
 }
